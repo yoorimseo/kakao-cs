@@ -1,11 +1,13 @@
 <template>
-    <div class="main">
-      <SNB/>
-      <Contents/>
-    </div>
+  <Navi/>
+  <div class="main">
+    <SNB/>
+    <Contents/>
+  </div>
 </template>
 
 <script>
+import Navi from './Navi.vue';
 import SNB from './SNB.vue';
 import Contents from './Contents.vue';
 
@@ -14,6 +16,11 @@ export default {
   components: {
     SNB,
     Contents,
+    Navi,
+  },
+  data() {
+    return {
+    };
   },
 };
 </script>

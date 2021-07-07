@@ -4,17 +4,17 @@
         <div class="sub-title">
             <a href="#" class="sub-txt">OS 공통</a>
         </div>
-        <Question/>
+        <Questions/>
     </div>
 </template>
 
 <script>
-import Question from './Question.vue';
+import Questions from './Questions.vue';
 
 export default {
   name: 'Contents',
   components: {
-    Question,
+    Questions,
   },
 };
 </script>

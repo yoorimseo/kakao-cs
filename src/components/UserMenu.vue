@@ -12,8 +12,6 @@
 <script>
 export default {
   name: 'UserMenu',
-  components: {
-  },
 };
 </script>
 

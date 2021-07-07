@@ -9,21 +9,18 @@
           <Search/>
         </div>
       </div>
-      <Navi/>
     </div>
 </template>
 
 <script>
 import UserMenu from './UserMenu.vue';
 import Search from './Search.vue';
-import Navi from './Navi.vue';
 
 export default {
   name: 'Header',
   components: {
     UserMenu,
     Search,
-    Navi,
   },
 };
 </script>
@@ -35,7 +32,6 @@ export default {
 .head {
   padding-top: 3.2em;
   height: 6.187em;
-  border-bottom: 1px solid #e8e8e8;
 }
 .head-inner {
   width: 990px;

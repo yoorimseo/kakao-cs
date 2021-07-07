@@ -1,14 +1,24 @@
 <template>
+<div class="navi-box">
     <div class="navi">
         <div class="navi-inner">
             <ul class="navi-list">
-                <li class="navi-list-txt" v-for="(link, idx) in naviLink" v-bind:key="idx">
+                <li class="navi-list-txt">
+                    <a href="#">홈</a>
+                    <span class="navi-list-arrow">></span>
+                </li>
+                <li class="navi-list-txt">
+                    <a href="#">카카오톡 지갑</a>
+                    <span class="navi-list-arrow">></span>
+                </li>
+                <li class="navi-list-txt" v-for="link in naviLink" :key="link">
                     <a href="#">{{link}}</a>
-                    <span class="navi-list-arrow" v-if="idx < naviLink.length-1">></span>
                 </li>
             </ul>
         </div>
     </div>
+</div>
+
 </template>
 
 <script>
@@ -16,13 +26,16 @@ export default {
   name: 'Navi',
   data() {
     return {
-      naviLink: ['홈', '카카오톡 지갑', '일반'],
+      naviLink: ['일반'],
     };
   },
 };
 </script>
 
 <style scoped>
+.navi-box {
+  border-bottom: 1px solid #e8e8e8;
+}
 .navi {
   width: 990px;
   margin: 0 auto;

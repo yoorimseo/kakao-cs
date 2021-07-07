@@ -2,7 +2,7 @@
     <div class="snb">
       <h2 class="snb-title">카카오톡 지갑</h2>
       <ul class="snb-list">
-        <li class="snb-list-txt" v-for="name in categoryName" v-bind:key="name">{{name}}</li>
+        <li class="snb-list-txt" v-for="name in categoryName" :key="name">{{name}}</li>
       </ul>
     </div>
 </template>
