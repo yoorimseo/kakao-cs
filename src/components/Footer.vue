@@ -22,6 +22,8 @@
 <script>
 export default {
   name: 'Footer',
+  components: {
+  },
 };
 </script>
 
@@ -29,7 +31,6 @@ export default {
 .footer {
   border-top: 1px solid #e8e8e8;
 }
-
 .fnb {
   width: 990px;
   height: 149px;
@@ -49,6 +50,7 @@ export default {
 }
 .fnb-list li {
   margin-right: 10px;
+  cursor: pointer;
 }
 .fnb-list-txt {
   font-weight: 600;

@@ -2,7 +2,7 @@
     <div class="search">
         <input class="search-inner" type="search" placeholder="궁금한 점이 있다면 도움말을 검색해 보세요.">
         <button class="search-btn">
-            <img class="search-btn-img" src="https://www.seekpng.com/png/full/871-8719667_download-png-transparent-background-search-icon.png">
+            <img width="24" height="24" src="https://www.seekpng.com/png/full/871-8719667_download-png-transparent-background-search-icon.png">
         </button>
     </div>
 </template>
@@ -10,6 +10,8 @@
 <script>
 export default {
   name: 'Search',
+  components: {
+  },
 };
 </script>
 
@@ -26,7 +28,6 @@ export default {
   height: 46px;
   padding: 0 0 0 10px;
   font-size: 16px;
-  outline: none;
   border: none;
 }
 .search-btn {
@@ -38,9 +39,5 @@ export default {
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
   margin: 10px;
-}
-.search-btn-img {
-  width: 24px;
-  height: 24px;
 }
 </style>
