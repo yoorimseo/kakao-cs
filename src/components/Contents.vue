@@ -1,6 +1,6 @@
 <template>
     <div class="contents">
-        <h1 class="title">일반</h1>
+        <h1 class="title">{{title}}</h1>
         <div class="sub-title">
             <a href="#" class="sub-txt">OS 공통</a>
         </div>
@@ -15,6 +15,11 @@ export default {
   name: 'Contents',
   components: {
     Questions,
+  },
+  data() {
+    return {
+      title: '일반',
+    };
   },
 };
 </script>
