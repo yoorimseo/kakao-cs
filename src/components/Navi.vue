@@ -11,7 +11,7 @@
                     <a href="#">카카오톡 지갑</a>
                     <span class="navi-list-arrow">></span>
                 </li>
-                <li class="navi-list-txt" v-for="link in naviLink" :key="link">
+                <li class="navi-list-txt" v-for="link in naviPath" :key="link">
                     <a href="#">{{link}}</a>
                 </li>
             </ul>
@@ -24,11 +24,7 @@
 <script>
 export default {
   name: 'Navi',
-  data() {
-    return {
-      naviLink: ['일반'],
-    };
-  },
+  props: ['naviPath'],
 };
 </script>
 

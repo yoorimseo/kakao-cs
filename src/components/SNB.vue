@@ -1,18 +1,23 @@
 <template>
-    <div class="snb">
-      <h2 class="snb-title">카카오톡 지갑</h2>
-      <ul class="snb-list">
-        <li class="snb-list-txt" v-for="name in categoryName" :key="name">{{name}}</li>
-      </ul>
-    </div>
+  <div class="snb">
+    <h2 class="snb-title">카카오톡 지갑</h2>
+    <ul class="snb-list">
+      <li class="snb-list-txt"
+        v-for="categoryName in categoryNameList" :key="categoryName"
+        @click="changeCategory(categoryName)"
+        :class="{'snb-list-selected-txt': selectedCategory}"
+      >{{categoryName}}</li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'SNB',
+  props: ['categoryNameList', 'changeCategory'],
   data() {
     return {
-      categoryName: ['일반', '인증서', '서비스 이용', 'MY 비밀번호', '디지털 ID', '지갑 QR'],
+      selectedCategory: false,
     };
   },
 };
@@ -43,5 +48,8 @@ export default {
 .snb-list-txt:hover {
     text-decoration: 1px black underline;
     color: black;
+}
+.snb-list-selected-txt {
+  color: black;
 }
 </style>

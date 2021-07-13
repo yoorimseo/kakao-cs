@@ -1,32 +1,38 @@
 <template>
-    <div class="contents">
-        <h1 class="title">{{title}}</h1>
-        <div class="sub-title">
-            <a href="#" class="sub-txt">OS 공통</a>
-        </div>
-        <Questions/>
+  <div class="contents">
+    <h1 class="title">{{naviTitle}}</h1>
+    <div class="sub-title">
+      <a href="#" class="sub-txt">OS 공통</a>
     </div>
+  <div class="list-box">
+    <div class="list">
+        <div class="list-inner" v-for="(question, num) in questionList" :key="num">
+          <Questions :question="question" :num="num+1"/>
+        </div>
+    </div>
+    <Ask/>
+  </div>
+    <!--리스트를 넘기지 말고 질문이랑 인덱스만 받게, :question="question"-->
+  </div>
 </template>
 
 <script>
 import Questions from './Questions.vue';
+import Ask from './Ask.vue';
 
 export default {
   name: 'Contents',
   components: {
     Questions,
+    Ask,
   },
-  data() {
-    return {
-      title: '일반',
-    };
-  },
+  props: ['naviTitle', 'questionList'],
 };
 </script>
 
 <style scoped>
 .contents {
-  height: 700px;
+  min-height: 700px;
   padding: 0 0 60px 58px;
   border-left: 1px solid #e8e8e8;
 }
@@ -49,5 +55,22 @@ export default {
   font-weight: 600;
   text-decoration-line: underline;
   cursor: pointer;
+}
+.list-box {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid black;
+}
+.list {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+}
+.list-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0 16px 0;
+  border-bottom: 1px solid #e8e8e8;
 }
 </style>

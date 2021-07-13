@@ -1,8 +1,8 @@
 <template>
-  <Navi/>
+  <Navi :naviPath="selectedCategoryName"/>
   <div class="main">
-    <SNB/>
-    <Contents/>
+    <SNB :categoryNameList="categoryNameList" :changeCategory="changeCategory" />
+    <Contents :questionList="selectedQuestionList" :naviTitle="selectedCategoryName"/>
   </div>
 </template>
 
@@ -10,6 +10,7 @@
 import Navi from './Navi.vue';
 import SNB from './SNB.vue';
 import Contents from './Contents.vue';
+import data from '../data/data';
 
 export default {
   name: 'Main',
@@ -20,7 +21,16 @@ export default {
   },
   data() {
     return {
+      selectedCategoryName: '일반',
+      categoryNameList: ['일반', '인증서', '서비스 이용', 'MY 비밀번호', '디지털 ID', '지갑 QR'],
+      selectedQuestionList: data['일반'],
     };
+  },
+  methods: {
+    changeCategory(categoryName) {
+      this.selectedCategoryName = categoryName;
+      this.selectedQuestionList = data[categoryName];
+    },
   },
 };
 </script>
