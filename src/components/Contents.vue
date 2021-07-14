@@ -4,15 +4,14 @@
     <div class="sub-title">
       <a href="#" class="sub-txt">OS 공통</a>
     </div>
-  <div class="list-box">
-    <div class="list">
-        <div class="list-inner" v-for="(question, num) in questionList" :key="num">
-          <Questions :question="question" :num="num+1"/>
-        </div>
+    <div class="list-box">
+      <div class="list">
+          <div class="list-inner" v-for="(question, num) in questionList" :key="num">
+            <Questions :question="question" :num="num+1"/>
+          </div>
+      </div>
+      <Ask/>
     </div>
-    <Ask/>
-  </div>
-    <!--리스트를 넘기지 말고 질문이랑 인덱스만 받게, :question="question"-->
   </div>
 </template>
 

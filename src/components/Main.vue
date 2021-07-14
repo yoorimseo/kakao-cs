@@ -1,7 +1,11 @@
 <template>
   <Navi :naviPath="selectedCategoryName"/>
   <div class="main">
-    <SNB :categoryNameList="categoryNameList" :changeCategory="changeCategory" />
+    <SNB
+      :categoryNameList="categoryNameList"
+      :changeCategory="changeCategory"
+      :selectedCategoryName="selectedCategoryName"
+    />
     <Contents :questionList="selectedQuestionList" :naviTitle="selectedCategoryName"/>
   </div>
 </template>

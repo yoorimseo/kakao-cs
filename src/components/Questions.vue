@@ -56,6 +56,7 @@ export default {
   color: #1e1e1e;
   width: 680px;
   margin: 5px;
+  margin-left: 60px;
   font-size: 15px;
   cursor: pointer;
 }

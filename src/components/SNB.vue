@@ -5,8 +5,11 @@
       <li class="snb-list-txt"
         v-for="categoryName in categoryNameList" :key="categoryName"
         @click="changeCategory(categoryName)"
-        :class="{'snb-list-selected-txt': selectedCategory}"
-      >{{categoryName}}</li>
+      >
+        <span :class="{'snb-list-selected-txt': categoryName==selectedCategoryName}">
+          {{categoryName}}
+        </span>
+      </li>
     </ul>
   </div>
 </template>
@@ -14,12 +17,7 @@
 <script>
 export default {
   name: 'SNB',
-  props: ['categoryNameList', 'changeCategory'],
-  data() {
-    return {
-      selectedCategory: false,
-    };
-  },
+  props: ['categoryNameList', 'changeCategory', 'selectedCategoryName'],
 };
 </script>
 
@@ -46,10 +44,11 @@ export default {
   cursor: pointer;
 }
 .snb-list-txt:hover {
-    text-decoration: 1px black underline;
-    color: black;
+  text-decoration: 1px black underline;
+  color: black;
 }
 .snb-list-selected-txt {
+  text-decoration: 1px black underline;
   color: black;
 }
 </style>
